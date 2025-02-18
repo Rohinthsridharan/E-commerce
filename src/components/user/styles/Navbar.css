@@ -101,7 +101,7 @@ nav a:hover {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: #fff;
+    background-color:none;
     position: absolute;
     top: 60px;
     right: 0;

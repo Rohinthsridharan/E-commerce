@@ -1,12 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";  // Correcting the import for Link
+// import { Link } from "react-router-dom"; 
+import { NavLink } from "react-router-dom"; // Correcting the import for Link
 import "bootstrap/dist/css/bootstrap.min.css";
+import { House, Cart, People, CreditCard } from "react-bootstrap-icons";
 
 const initialArtists = [
   { id: "A001", name: "Rohinth", email: "rohinth@gmail.com" },
   { id: "A002", name: "Jane Smith", email: "udaya@gmail.com" },
+];
+
+const navItems = [
+  { name: "Dashboard", to: "/", icon: <House size={20} className="me-2" /> },
+  { name: "Orders", to: "/orders", icon: <Cart size={20} className="me-2" /> },
+  { name: "Artists", to: "/artists", icon: <People size={20} className="me-2" /> },
+  { name: "Payments", to: "/payments", icon: <CreditCard size={20} className="me-2" /> },
 ];
 
 export default function Artists() {
@@ -26,16 +35,24 @@ export default function Artists() {
   return (
     <div className="d-flex vh-100 bg-light">
       {/* Sidebar */}
-      <aside className="bg-dark text-white p-4" style={{ width: "250px" }}>
-        <h2 className="fs-5 fw-bold mb-4">Admin Panel</h2>
-        <nav className="nav flex-column">
-          {["Dashboard", "Orders", "Artists", "Payments"].map((item, index) => (
-            <Link key={index} to={`/${item.toLowerCase()}`} className="nav-link text-white py-2 px-3">
-              {item}
-            </Link>
-          ))}
-        </nav>
-      </aside>
+      <aside className="bg-dark text-white p-4 min-vh-100" style={{ width: "250px" }}>
+              <h2 className="fs-4 fw-bold mb-4">Admin Panel</h2>
+              <nav className="nav flex-column">
+                {navItems.map((item, index) => (
+                  <NavLink
+                    key={index}
+                    to={item.to}
+                    className="nav-link text-white py-2 px-3 rounded"
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? "#007bff" : "transparent",
+                    })}
+                  >
+                    {item.icon}
+                    {item.name}
+                  </NavLink>
+                ))}
+              </nav>
+            </aside>
 
       {/* Main Content */}
       <main className="flex-grow-1 p-4">
