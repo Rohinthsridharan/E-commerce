@@ -1,4 +1,6 @@
 // import React from "react";
+import "./App.css";
+import Auth from "./Auth";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/user/components/HomePage";
@@ -8,9 +10,14 @@ import CheckoutPage from "./components/user/components/CheckoutPage";
 import OrdersPage from "./components/user/components/OrdersPage";
 import Orders from "./components/user/components/Orders";
 import ArtistDashboard from "./components/artist/Components/ArtistDashboard";
-import "./App.css";
-import Auth from "./Auth";
-import Dashboard from "./components/admin/Dashboard";
+import ArtistPayments from "./components/artist/Components/Payments";
+import ArtistOrders from "./components/artist/Components/Orders";
+import Artistproductupload from "./components/artist/Components/ProductUpload";
+import AdminDashboard from "./components/admin/Dashboard";
+import AdminOrders from "./components/admin/Orders";
+import AdminArtists from "./components/admin/Artists";
+import AdminPayments from "./components/admin/payments";
+
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState([]);
@@ -31,31 +38,25 @@ function App() {
       <div className="container-fluid">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/shop"
-            element={
-              <ShopPage
-                addToBag={addToBag}
-                bagCount={bagCount}
-                setBagCount={setBagCount}
-              />
-            }
-          />
-          <Route
-            path="/shoppingbag"
-            element={
-              <ShoppingBag
-                shoppingBag={shoppingBag}
-                removeFromBag={removeFromBag}
-              />
-            }
-          />
+          <Route path="/shop" element={ <ShopPage addToBag={addToBag} bagCount={bagCount} setBagCount={setBagCount} />} />
+          <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag} removeFromBag={removeFromBag} />  }/>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/ordersDetails" element={<OrdersPage />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/artist" element={<ArtistDashboard/>} />
+
+          <Route path="/artist" element={<ArtistDashboard />} />
+          <Route path="/artistorders" element={<ArtistOrders />} /> 
+          <Route path="/artistproductupload" element={< Artistproductupload/>} />   
+          <Route path="/artistpayments" element={<ArtistPayments />} />  
+
+
           <Route path="/login" element={<Auth/>} />
-          <Route path="/admin" element={<Dashboard/>} />
+
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/adminorders" element={<AdminOrders />} />
+          <Route path="/adminartists" element={<AdminArtists />} />
+          <Route path="/adminpayments" element={<AdminPayments />} />  
+          
         </Routes>
       </div>
     </Router>
@@ -64,25 +65,3 @@ function App() {
 }
 
 export default App;
-
-
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Dashboard from "./components/admin/Dashboard";
-// import Orders from "./components/admin/Orders";
-// import Artists from "./components/admin/Artists";
-// import Payments from "./components/admin/payments";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Dashboard />} />
-//         <Route path="/orders" element={<Orders />} />
-//         <Route path="/artists" element={<Artists />} />
-//         <Route path="/payments" element={<Payments />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;

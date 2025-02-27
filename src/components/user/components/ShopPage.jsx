@@ -27,11 +27,11 @@ const ShopPage = ({ addToBag, bagCount, setBagCount }) => {
   };
 
   const sampleProducts = [
-    { id: 1, name: "10B portrait", price: 399.99, image: art1 },
-    { id: 2, name: "8B portrait", price: 589.99, image: art2 },
-    { id: 3, name: "4B & 2B portrait", price: 939.99, image: art3 },
-    { id: 4, name: "Color Pencil Drawing", price: 1049.99, image: art4 },
-    { id: 5, name: "Coffee Painting", price: 1559.99, image: art5 },
+    { id: 1, name: "10B portrait", price: 499.99, image: art1 },
+    { id: 2, name: "8B portrait", price: 449.99, image: art2 },
+    { id: 3, name: "4B & 2B portrait", price: 799.99, image: art3 },
+    { id: 4, name: "Color Pencil Drawing", price: 1299.99, image: art4 },
+    { id: 5, name: "Coffee Painting", price: 1899.99, image: art5 },
     { id: 6, name: "portrait 6", price: 499.99, image: art6 },
     { id: 7, name: "portrait 7", price: 699.99, image: art7 },
     { id: 8, name: "portrait 8", price: 899.99, image: art8 },

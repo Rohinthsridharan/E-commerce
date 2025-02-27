@@ -1,70 +1,50 @@
-"use client";
-
-import { useState } from "react";
-// import { Link } from "react-router-dom"; 
-import { NavLink } from "react-router-dom"; // Correcting the import for Link
+import { useState } from "react"; 
+import Sidebar from "./Sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { House, Cart, People, CreditCard } from "react-bootstrap-icons";
 
 const initialArtists = [
-  { id: "A001", name: "Rohinth", email: "rohinth@gmail.com" },
-  { id: "A002", name: "Jane Smith", email: "udaya@gmail.com" },
-];
-
-const navItems = [
-  { name: "Dashboard", to: "/", icon: <House size={20} className="me-2" /> },
-  { name: "Orders", to: "/orders", icon: <Cart size={20} className="me-2" /> },
-  { name: "Artists", to: "/artists", icon: <People size={20} className="me-2" /> },
-  { name: "Payments", to: "/payments", icon: <CreditCard size={20} className="me-2" /> },
+  { id: "A001", name: "Udayakumar", email: "udaya@gmail.com" },
+  { id: "A002", name: "Rohinth", email: "rohinth@gmail.com" },
+  { id: "A003", name: "Abirami", email: "abirami@gmail.com" },
+  { id: "A004", name: "Surya", email: "Surya@gmail.com" },
+  { id: "A005", name: "Arjun", email: "arjun@gmail.com" },
 ];
 
 export default function Artists() {
   const [artists, setArtists] = useState(initialArtists);
   const [newArtist, setNewArtist] = useState({ name: "", email: "" });
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState("");
 
   const addArtist = () => {
+    if (!newArtist.name || !newArtist.email) {
+      setError("Both Name and Email are required!");
+      return;
+    }
     const id = `A${(artists.length + 1).toString().padStart(3, "0")}`;
     const password = Math.random().toString(36).slice(-8);
     setArtists([...artists, { ...newArtist, id, password }]);
     setNewArtist({ name: "", email: "" });
     setShowModal(false);
+    setError("");
     alert(`New artist added with ID: ${id} and temporary password: ${password}`);
   };
 
   return (
-    <div className="d-flex vh-100 bg-light">
-      {/* Sidebar */}
-      <aside className="bg-dark text-white p-4 min-vh-100" style={{ width: "250px" }}>
-              <h2 className="fs-4 fw-bold mb-4">Admin Panel</h2>
-              <nav className="nav flex-column">
-                {navItems.map((item, index) => (
-                  <NavLink
-                    key={index}
-                    to={item.to}
-                    className="nav-link text-white py-2 px-3 rounded"
-                    style={({ isActive }) => ({
-                      backgroundColor: isActive ? "#007bff" : "transparent",
-                    })}
-                  >
-                    {item.icon}
-                    {item.name}
-                  </NavLink>
-                ))}
-              </nav>
-            </aside>
+    <div className="d-flex bg-light">
+      <Sidebar/>
 
       {/* Main Content */}
       <main className="flex-grow-1 p-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h1 className="fw-bold">Artists</h1>
-          <button className="btn btn-warning" onClick={() => setShowModal(true)}>
-            Add New Artist
+          <button className="btn btn-warning px-3 py-1" onClick={() => setShowModal(true)}>
+            Add Artist
           </button>
         </div>
 
         <div className="container">
-          <div className="table-responsive border rounded p-3 shadow">
+          <div className="table-responsive border rounded border-warning p-3 shadow">
             <table className="table table-striped table-bordered">
               <thead className="table-secondary">
                 <tr>
@@ -88,34 +68,35 @@ export default function Artists() {
 
         {/* Bootstrap Modal for Add Artist */}
         {showModal && (
-          <div className="modal fade show d-block" tabIndex="-1">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">Add New Artist</h5>
+          <div className="modal fade show d-block" tabIndex="-1" style={{ background: "rgba(0,0,0,0.5)" }}>
+            <div className="modal-dialog modal-sm">
+              <div className="modal-content rounded-3 shadow-lg">
+                <div className="modal-header d-flex justify-content-between">
+                  <h5 className="modal-title fs-5">Add New Artist</h5>
                   <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
                 </div>
-                <div className="modal-body">
+                <div className="modal-body p-4">
+                  {error && <div className="alert alert-danger p-2 text-center">{error}</div>}
                   <input
                     type="text"
                     placeholder="Name"
-                    className="form-control mb-2"
+                    className="form-control mb-3 rounded-3"
                     value={newArtist.name}
                     onChange={(e) => setNewArtist({ ...newArtist, name: e.target.value })}
                   />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="form-control mb-3"
+                    className="form-control mb-3 rounded-3"
                     value={newArtist.email}
                     onChange={(e) => setNewArtist({ ...newArtist, email: e.target.value })}
                   />
                 </div>
-                <div className="modal-footer">
-                  <button className="btn btn-secondary" onClick={() => setShowModal(false)}>
+                <div className="modal-footer d-flex justify-content-between">
+                  <button className="btn btn-danger px-3" onClick={() => setShowModal(false)}>
                     Cancel
                   </button>
-                  <button className="btn btn-warning" onClick={addArtist}>
+                  <button className="btn btn-warning px-3" onClick={addArtist}>
                     Add Artist
                   </button>
                 </div>

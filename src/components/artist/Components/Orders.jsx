@@ -30,7 +30,7 @@ const Orders = ({ orders, handleStatusChange }) => {
                     <td>#{order.id}</td>
                     <td>{order.customer}</td>
                     <td>{order.product}</td>
-                    <td>${order.total}</td>
+                    <td>₹{order.total}</td>
                     <td>
                       <Form.Select 
                         value={order.status}

@@ -46,9 +46,9 @@ const Payments = ({ paymentRequests, handlePaymentSubmit }) => {
                 <tr key={payment.id}>
                   <td>#{payment.id}</td>
                   <td>
-                    {new Intl.NumberFormat("en-US", {
+                    {new Intl.NumberFormat("en-IN", {
                       style: "currency",
-                      currency: "USD",
+                      currency: "INR",
                     }).format(payment.amount)}
                   </td>
                   <td>{getStatusBadge(payment.status)}</td>
@@ -57,14 +57,14 @@ const Payments = ({ paymentRequests, handlePaymentSubmit }) => {
               ))}
             </tbody>
           </Table>
-          <div className='d-flex justify-content-between align-items-center mb-4' >
-           <Button 
-           variant="warning" 
-           onClick={() => setShowPaymentModal(true)} 
-            >
-           New Payment Request
-           </Button>
-           </div>
+            <div className='d-flex justify-content-between align-items-center mb-4' >
+              <Button 
+              variant="warning" 
+              onClick={() => setShowPaymentModal(true)} 
+              >
+              New Payment Request
+              </Button>
+            </div>
         </div>
       </div>
 

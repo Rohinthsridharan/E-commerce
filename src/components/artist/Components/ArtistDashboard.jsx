@@ -9,11 +9,13 @@ const ArtistDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [orders, setOrders] = useState([
-    { id: "1", customer: "John Doe", product: "Handmade Vase", total: 89.99, status: "completed", proof: "delivery_confirmation.jpg" },
-    { id: "2", customer: "Jane Smith", product: "Ceramic Bowl", total: 45.0, status: "in_progress" },
-    { id: "3", customer: "Alice Johnson", product: "Pottery Set", total: 129.99, status: "pending" },
-    { id: "4", customer: "Bob Williams", product: "Clay Sculpture", total: 199.99, status: "completed", proof: "sculpture_delivered.jpg" },
-    { id: "5", customer: "Emma Brown", product: "Ceramic Mug", total: 24.99, status: "in_progress" },
+    { id: "1", customer: "Arjun", product:"10B Portrait", total: 449.99, status: "completed", proof: "rohinh.jpg" },
+    { id: "2", customer: "Jeyaraj", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
+    { id: "3", customer: "Kiruba", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
+    { id: "4", customer: "Chezhian", product: "10B Portrait", total: 449.99, status: "completed", proof: "rohinh.jpg" },
+    { id: "5", customer: "Praveen", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
+    { id: "6", customer: "Rajamohan", product: "10B Portrait", total: 449.99, status: "in_progress" },
+    { id: "7", customer: "Surya", product: "10B Portrait", total: 449.99, status: "Pending" },
   ]);
   // eslint-disable-next-line no-unused-vars
   const [overviewData, setOverviewData] = useState([
@@ -35,9 +37,9 @@ const ArtistDashboard = () => {
   const [productDescription, setProductDescription] = useState("");
   const [productFiles, setProductFiles] = useState([]);
   const [paymentRequests, setPaymentRequests] = useState([
-    { id: "1", amount: 1250.0, status: "approved", date: "2024-02-01" },
-    { id: "2", amount: 850.0, status: "approved", date: "2024-01-28" },
-    { id: "3", amount: 1500.0, status: "pending", date: "2024-02-05" },
+    { id: "1", amount: 736.36, status: "approved", date: "2024-02-01" },
+    { id: "2", amount: 368.18, status: "approved", date: "2024-01-28" },
+    { id: "3", amount: 736.36, status: "pending", date: "2024-02-05" },
   ]);
 // eslint-disable-next-line no-unused-vars
   const toggleSidebar = () => {

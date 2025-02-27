@@ -18,7 +18,7 @@ const Dashboard = ({ overviewData, orders }) => {
                 <h5 className="card-title">Total Revenue</h5>
                 <CircleDollarSign size={20} className="text-warning" />
               </div>
-              <h3 className="card-text">$45,231.89</h3>
+              <h3 className="card-text">₹1840.90</h3>
               <small className="text-muted">+20.1% from last month</small>
             </div>
           </div>
@@ -30,8 +30,8 @@ const Dashboard = ({ overviewData, orders }) => {
                 <h5 className="card-title">Orders</h5>
                 <ShoppingCart size={20} className="text-warning" />
               </div>
-              <h3 className="card-text">+573</h3>
-              <small className="text-muted">+201 since last hour</small>
+              <h3 className="card-text">+7</h3>
+              <small className="text-muted">+2 since last hour</small>
             </div>
           </div>
         </div>
