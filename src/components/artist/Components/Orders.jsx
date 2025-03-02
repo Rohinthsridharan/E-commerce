@@ -3,6 +3,21 @@ import { Form, Table, Button } from 'react-bootstrap';
 import { Ship } from 'lucide-react';
 
 const Orders = ({ orders, handleStatusChange }) => {
+  const handleDownload = (imageUrl, orderId) => {
+    try {
+      // Create a temporary anchor element
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.setAttribute('download', `order-${orderId}-image.jpg`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+      alert('Failed to download image.');
+    }
+  };
+
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -18,7 +33,8 @@ const Orders = ({ orders, handleStatusChange }) => {
                   <th>Order ID</th>
                   <th>Customer</th>
                   <th>Product</th>
-                  <th>Total</th>
+                  <th>Picture</th>
+                  <th>Price</th>
                   <th>Status</th>
                   <th>Proof</th>
                   <th>Actions</th>
@@ -30,6 +46,19 @@ const Orders = ({ orders, handleStatusChange }) => {
                     <td>#{order.id}</td>
                     <td>{order.customer}</td>
                     <td>{order.product}</td>
+                    <td>
+                      {order.picture ? (
+                        <Button 
+                          variant="outline-primary" 
+                          size="sm"
+                          onClick={() => handleDownload(order.picture, order.id)}
+                        >
+                          Download
+                        </Button>
+                      ) : (
+                        <span className="text-muted">No Image</span>
+                      )}
+                    </td>
                     <td>₹{order.total}</td>
                     <td>
                       <Form.Select 
@@ -43,7 +72,11 @@ const Orders = ({ orders, handleStatusChange }) => {
                       </Form.Select>
                     </td>
                     <td>
-                      <Button variant="outline-warning" size="sm">
+                      <Button 
+                        variant="outline-warning" 
+                        size="sm"
+                        onClick={() => window.open(order.proof, '_blank')}
+                      >
                         {order.proof ? 'View Proof' : 'Add Proof'}
                       </Button>
                     </td>

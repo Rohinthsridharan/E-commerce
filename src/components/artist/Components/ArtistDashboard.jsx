@@ -9,14 +9,70 @@ const ArtistDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [orders, setOrders] = useState([
-    { id: "1", customer: "Arjun", product:"10B Portrait", total: 449.99, status: "completed", proof: "rohinh.jpg" },
-    { id: "2", customer: "Jeyaraj", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
-    { id: "3", customer: "Kiruba", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
-    { id: "4", customer: "Chezhian", product: "10B Portrait", total: 449.99, status: "completed", proof: "rohinh.jpg" },
-    { id: "5", customer: "Praveen", product: "10B Portrait", total: 449.99, status: "completed",proof: "rohinh.jpg" },
-    { id: "6", customer: "Rajamohan", product: "10B Portrait", total: 449.99, status: "in_progress" },
-    { id: "7", customer: "Surya", product: "10B Portrait", total: 449.99, status: "Pending" },
-  ]);
+  { 
+    id: "1", 
+    customer: "Arjun", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/200?random=1", 
+    total: 449.99, 
+    status: "completed", 
+    proof: "https://picsum.photos/100?proof=1" 
+  },
+  { 
+    id: "2", 
+    customer: "Jeyaraj", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=2", 
+    total: 449.99, 
+    status: "completed", 
+    proof: "https://picsum.photos/100?proof=2" 
+  },
+  { 
+    id: "3", 
+    customer: "Kiruba", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=3", 
+    total: 449.99, 
+    status: "completed", 
+    proof: "https://picsum.photos/100?proof=3" 
+  },
+  { 
+    id: "4", 
+    customer: "Chezhian", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=4", 
+    total: 449.99, 
+    status: "completed", 
+    proof: "https://picsum.photos/100?proof=4" 
+  },
+  { 
+    id: "5", 
+    customer: "Praveen", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=5", 
+    total: 449.99, 
+    status: "completed", 
+    proof: "https://picsum.photos/100?proof=5" 
+  },
+  { 
+    id: "6", 
+    customer: "Rajamohan", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=6", 
+    total: 449.99, 
+    status: "in_progress", 
+    proof: "https://picsum.photos/100?proof=6" 
+  },
+  { 
+    id: "7", 
+    customer: "Surya", 
+    product: "10B Portrait", 
+    picture: "https://picsum.photos/50?random=7", 
+    total: 449.99, 
+    status: "pending", 
+    proof: "https://picsum.photos/100?proof=7" 
+  },
+]);
   // eslint-disable-next-line no-unused-vars
   const [overviewData, setOverviewData] = useState([
     { name: "Jan", total: 2400 },

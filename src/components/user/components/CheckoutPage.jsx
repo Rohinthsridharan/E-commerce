@@ -184,7 +184,6 @@ const CheckoutPage = ({ product }) => {
                     value={formData.description}
                     onChange={handleInputChange}
                     rows="4"
-                    required
                   />
                 </td>
               </tr>
