@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+.ecommerce-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+.ecommerce-box:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.product-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #555;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Centered buttons */
+  gap: 8px;
+}
+
+button {
+=======
 /* General container styling for the product list */
 .ecommerce-box-list {
   display: flex;
@@ -71,6 +123,7 @@
 /* General button styling */
 button {
   flex: 1;
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
   padding: 8px 12px;
   font-size: 14px;
   border-radius: 6px;
@@ -79,7 +132,10 @@ button {
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+<<<<<<< HEAD
+=======
 /* Primary button styling */
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
 button.btn-primary {
   background-color: #007bff;
   color: white;
@@ -89,7 +145,10 @@ button.btn-primary:hover {
   background-color: #0056b3;
 }
 
+<<<<<<< HEAD
+=======
 /* Success button styling */
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
 button.btn-success {
   background-color: #28a745;
   color: white;
@@ -98,3 +157,15 @@ button.btn-success {
 button.btn-success:hover {
   background-color: #1e7e34;
 }
+<<<<<<< HEAD
+
+/* Ensure consistent card height */
+.col-md-3 {
+  display: flex;
+}
+
+.ecommerce-box {
+  flex: 1;
+}
+=======
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23

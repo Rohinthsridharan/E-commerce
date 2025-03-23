@@ -2,6 +2,8 @@ import "./App.css";
 import Auth from "./Auth";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivacyPolicy from "./components/user/components/PrivacyPolicy";
+import ContactForm from "./components/user/components/ContactForm";
 import HomePage from "./components/user/components/HomePage";
 import ShopPage from "./components/user/components/ShopPage";
 import ShoppingBag from "./components/user/components/ShoppingBag";
@@ -35,6 +37,11 @@ function App() {
     <Router>
       <div className="container-fluid">
         <Routes>
+<<<<<<< HEAD
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/Contact" element={<ContactForm />} />
+=======
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
           <Route path="/userdashboard" element={<HomePage />} />
           <Route path="/shop" element={<ShopPage addToBag={addToBag} bagCount={bagCount} setBagCount={setBagCount} />} />
           <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag} removeFromBag={removeFromBag} />} />

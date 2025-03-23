@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 // const Order = require('../models/Order');
 // const Payment = require('../models/Payment');
 // const Product = require('../models/Product');
@@ -92,6 +94,7 @@
 //   }
 // };
 
+>>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
 const Order = require('../models/Order');
 const Payment = require('../models/Payment');
 const Product = require('../models/Product');
