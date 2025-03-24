@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 import { useState } from 'react';
 import './Auth.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-=======
-import { useState } from "react";
-import "./Auth.css";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
 
 const Auth = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [credentials, setCredentials] = useState({
-<<<<<<< HEAD
     fullname: '',
     username: '',
     password: '',
@@ -22,26 +14,13 @@ const Auth = () => {
   const [error, setError] = useState('');
   const [acceptedTerms, setAcceptedTerms] = useState(false); // State for checkbox
   const [showTerms, setShowTerms] = useState(false); // State for terms modal
-=======
-    fullname: "",
-    username: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [error, setError] = useState("");
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
   const navigate = useNavigate();
 
   const toggleForm = () => {
     setIsRegister(!isRegister);
-<<<<<<< HEAD
     setError('');
     setCredentials({ fullname: '', username: '', password: '', confirmPassword: '' });
     setAcceptedTerms(false); // Reset checkbox on toggle
-=======
-    setError("");
-    setCredentials({ fullname: "", username: "", password: "", confirmPassword: "" });
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
   };
 
   const isValidEmail = (email) => {
@@ -50,49 +29,31 @@ const Auth = () => {
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
-<<<<<<< HEAD
     setError('');
-=======
-    setError("");
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     if (!acceptedTerms) {
       setError('You must accept the Terms and Conditions to proceed.');
       return;
     }
     if (!isValidEmail(credentials.username)) {
       setError('Invalid Email Format!');
-=======
-    if (!isValidEmail(credentials.username)) {
-      setError("Invalid Email Format!");
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
       return;
     }
 
     if (isRegister) {
       if (credentials.password !== credentials.confirmPassword) {
-<<<<<<< HEAD
         setError('Passwords do not match!');
         return;
       }
       try {
         const res = await axios.post('http://localhost:5000/api/auth/register', {
-=======
-        setError("Passwords do not match!");
-        return;
-      }
-      try {
-        const res = await axios.post("http://localhost:5000/api/auth/register", {
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
           name: credentials.fullname,
           email: credentials.username,
           password: credentials.password,
         });
-<<<<<<< HEAD
         localStorage.setItem('token', res.data.token);
         alert('Registration successful!');
         navigate('/userdashboard');
@@ -112,27 +73,6 @@ const Auth = () => {
         else navigate('/userdashboard');
       } catch (err) {
         setError(err.response?.data?.message || 'Invalid credentials!');
-=======
-        localStorage.setItem("token", res.data.token);
-        alert("Registration successful!");
-        navigate("/userdashboard");
-      } catch (err) {
-        setError(err.response?.data?.message || "Registration failed!");
-      }
-    } else {
-      try {
-        const res = await axios.post("http://localhost:5000/api/auth/login", {
-          email: credentials.username,
-          password: credentials.password,
-        });
-        localStorage.setItem("token", res.data.token);
-        const role = res.data.role;
-        if (role === "admin") navigate("/admindashboard");
-        else if (role === "artist") navigate("/artistdashboard");
-        else navigate("/userdashboard");
-      } catch (err) {
-        setError(err.response?.data?.message || "Invalid credentials!");
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
       }
     }
   };
@@ -140,7 +80,6 @@ const Auth = () => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-<<<<<<< HEAD
         <h2>{isRegister ? 'Register' : 'Login'}</h2>
         <form onSubmit={handleSubmit}>
           {isRegister && (
@@ -255,25 +194,6 @@ const Auth = () => {
           </div>
         </div>
       )}
-=======
-        <h2>{isRegister ? "Register" : "Login"}</h2>
-        <form onSubmit={handleSubmit}>
-          {isRegister && (
-            <input type="text" name="fullname" placeholder="Full Name" required onChange={handleChange} value={credentials.fullname} />
-          )}
-          <input type="text" name="username" placeholder="Email" required onChange={handleChange} value={credentials.username} />
-          {error && <p className="error-message">{error}</p>}
-          <input type="password" name="password" placeholder="Password" required onChange={handleChange} value={credentials.password} />
-          {isRegister && (
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required onChange={handleChange} value={credentials.confirmPassword} />
-          )}
-          <button type="submit">{isRegister ? "Register" : "Login"}</button>
-        </form>
-        <p onClick={toggleForm} className="toggle-text">
-          {isRegister ? "Already have an account? Login" : "Don't have an account? Register"}
-        </p>
-      </div>
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
     </div>
   );
 };

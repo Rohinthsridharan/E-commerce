@@ -37,11 +37,8 @@ function App() {
     <Router>
       <div className="container-fluid">
         <Routes>
-<<<<<<< HEAD
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/Contact" element={<ContactForm />} />
-=======
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
           <Route path="/userdashboard" element={<HomePage />} />
           <Route path="/shop" element={<ShopPage addToBag={addToBag} bagCount={bagCount} setBagCount={setBagCount} />} />
           <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag} removeFromBag={removeFromBag} />} />
