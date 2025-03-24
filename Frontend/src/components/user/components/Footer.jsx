@@ -7,7 +7,6 @@ const Footer = () => {
       <div className="container text-center">
         <p>&copy; {new Date().getFullYear()} E-Commerce. All rights reserved.</p>
         <p>
-<<<<<<< HEAD
           <a href="/userdashboard" className="text-white me-3">About Us</a> | 
           <a href="/contact" className="text-white mx-3">Contact</a> | 
           <a href="/privacypolicy" className="text-white ms-3">Privacy Policy</a>
