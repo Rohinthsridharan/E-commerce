@@ -11,11 +11,6 @@ const Footer = () => {
           <a href="/userdashboard" className="text-white me-3">About Us</a> | 
           <a href="/contact" className="text-white mx-3">Contact</a> | 
           <a href="/privacypolicy" className="text-white ms-3">Privacy Policy</a>
-=======
-          <a href="/about" className="text-white me-3">About Us</a> | 
-          <a href="/contact" className="text-white mx-3">Contact</a> | 
-          <a href="/privacy" className="text-white ms-3">Privacy Policy</a>
->>>>>>> 710881eb97a6d2a170660eaf887e3d5b4069aa23
         </p>
       </div>
     </footer>
