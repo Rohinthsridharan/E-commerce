@@ -29,7 +29,7 @@ const Orders = () => {
         console.error('Error fetching orders:', err.response?.data);
         setError('Failed to load orders.');
         if (err.response?.status === 401) {
-          navigate("/login");
+          navigate("/");
         }
       }
     };
@@ -119,4 +119,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default Orders;  
