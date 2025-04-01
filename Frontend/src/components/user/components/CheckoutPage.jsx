@@ -34,7 +34,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       setError("Please log in to place an order.");
-      navigate("/login");
+      navigate("/");
       return;
     }
   
@@ -144,23 +144,25 @@ const CheckoutPage = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Upload Picture (Optional):</label>
+            <label className="form-label">Upload Picture :</label>
             <input
               type="file"
               className="form-control"
               name="picture"
               onChange={handleFileChange}
               accept="image/*"
+              required
             />
             {formData.picture && <small className="text-muted">{formData.picture.name}</small>}
           </div>
           <div className="mb-3">
-            <label className="form-label">Product Description (Optional):</label>
+            <label className="form-label">Product Description :</label>
             <textarea
               className="form-control"
               name="description"
               value={formData.description}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="mb-3">

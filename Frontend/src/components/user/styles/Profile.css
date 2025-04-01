@@ -1,5 +1,4 @@
-/* Profile.css */
-.profile-modal-overlay {
+/* .profile-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -94,7 +93,6 @@
   opacity: 0.8;
 }
 
-/* Close button */
 .profile-modal .close-btn {
   position: absolute;
   top: 12px;
@@ -106,4 +104,59 @@
 
 .profile-modal .close-btn:hover {
   color: #000;
+} */
+
+/* Profile.css */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.btn-danger:hover {
+  opacity: 0.8;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-control:focus {
+  border: 1px solid #007bff;
+}
+
+.profile-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }

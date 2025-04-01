@@ -1,10 +1,12 @@
-General container styling for the product list
+/* General container styling for the product list */
 .shopping-bag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 300px); /* 4 columns, each 300px wide */
+  gap: 16px; /* Gap between cards */
+  justify-content: center; /* Center the grid within the container */
   padding: 16px;
+  max-width: 1280px; /* Optional: Limits total width (4 * 300px + 3 * 16px = 1248px) */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Styling for individual product cards */
@@ -12,7 +14,7 @@ General container styling for the product list
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
-  width: 200px;
+  width: 300px; /* Matches grid column width */
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -30,6 +32,8 @@ General container styling for the product list
   height: 200px;
   overflow: hidden;
   position: relative;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Image styling for uniformity */

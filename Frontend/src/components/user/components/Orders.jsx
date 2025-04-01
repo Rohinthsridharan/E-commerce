@@ -15,7 +15,7 @@ const Orders = () => {
     const fetchOrders = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
-        navigate("/login");
+        navigate("/");
         return;
       }
       try {
@@ -38,7 +38,7 @@ const Orders = () => {
   const deleteOrder = async (orderId) => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/login");
+      navigate("/");
       return;
     }
     try {

@@ -34,10 +34,13 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!acceptedTerms) {
+    
+    // Only check terms acceptance for registration
+    if (isRegister && !acceptedTerms) {
       setError('You must accept the Terms and Conditions to proceed.');
       return;
     }
+    
     if (!isValidEmail(credentials.username)) {
       setError('Invalid Email Format!');
       return;
@@ -119,21 +122,24 @@ const Auth = () => {
               value={credentials.confirmPassword}
             />
           )}
-          <div className="terms-container">
-            <input
-              type="checkbox"
-              id="terms"
-              checked={acceptedTerms}
-              onChange={() => setAcceptedTerms(!acceptedTerms)}
-            />
-            <label htmlFor="terms">
-              I agree to the{' '}
-              <span className="terms-link" onClick={() => setShowTerms(true)}>
-                Terms and Conditions
-              </span>
-            </label>
-          </div>
-          <button type="submit" disabled={!acceptedTerms}>
+          {/* Show terms checkbox only on register page */}
+          {isRegister && (
+            <div className="terms-container">
+              <input
+                type="checkbox"
+                id="terms"
+                checked={acceptedTerms}
+                onChange={() => setAcceptedTerms(!acceptedTerms)}
+              />
+              <label htmlFor="terms">
+                I agree to the{' '}
+                <span className="terms-link" onClick={() => setShowTerms(true)}>
+                  Terms and Conditions
+                </span>
+              </label>
+            </div>
+          )}
+          <button type="submit" disabled={isRegister && !acceptedTerms}>
             {isRegister ? 'Register' : 'Login'}
           </button>
         </form>
@@ -142,8 +148,8 @@ const Auth = () => {
         </p>
       </div>
 
-      {/* Terms and Conditions Modal */}
-      {showTerms && (
+      {/* Show terms modal only when registering */}
+      {isRegister && showTerms && (
         <div className="terms-modal">
           <div className="terms-content">
             <h3>Terms and Conditions</h3>

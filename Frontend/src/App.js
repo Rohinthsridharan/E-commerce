@@ -9,7 +9,7 @@ import ShopPage from "./components/user/components/ShopPage";
 import ShoppingBag from "./components/user/components/ShoppingBag";
 import CheckoutPage from "./components/user/components/CheckoutPage";
 import Orders from "./components/user/components/Orders";
-import Profile from "./components/user/components/Profile"; // Import Profile
+import Profile from "./components/user/components/Profile"; 
 import ArtistDashboard from "./components/artist/ArtistDashboard";
 import ArtistPayments from "./components/artist/ArtistPayments";
 import ArtistOrders from "./components/artist/ArtistOrders";
@@ -44,7 +44,7 @@ function App() {
           <Route path="/shoppingbag" element={<ShoppingBag shoppingBag={shoppingBag} removeFromBag={removeFromBag} />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/profile" element={<Profile />} /> {/* Added Profile route */}
+          <Route path="/profile" element={<Profile />} /> 
           <Route path="/" element={<Auth />} />
           <Route path="/artistdashboard" element={<ArtistDashboard />} />
           <Route path="/artistorders" element={<ArtistOrders />} />

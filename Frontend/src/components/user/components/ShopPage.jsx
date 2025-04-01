@@ -79,7 +79,7 @@ const ShopPage = ({ addToBag, bagCount, setBagCount }) => {
                       <button
                         onClick={() => handleAddToBag(product)}
                         className="btn btn-primary"
-                      >
+                      >   
                         Add to Bag
                       </button>
                       <button

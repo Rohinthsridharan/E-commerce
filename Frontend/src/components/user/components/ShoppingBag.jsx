@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import '../styles/ShoppingBag.css';
+import Footer from "./Footer";
 
 const ShoppingBag = () => {
   const navigate = useNavigate();
@@ -69,43 +70,43 @@ const ShoppingBag = () => {
         {cartItems.length === 0 && !error ? (
           <p className="text-center">Your bag is empty.</p>
         ) : (
-          <div className="row">
+          <div className="shopping-bag-container">
             {cartItems.map((item) => (
-              <div key={item.productId?._id || item._id} className="col-md-3 mb-3">
-                <div className="card">
+              <div key={item.productId?._id || item._id} className="shopping-bag-card">
+                <div className="shopping-bag-image-container border rounded">
                   <img
                     src={item.productId?.image ? `http://localhost:5000${item.productId.image}` : "/placeholder.jpg"}
                     alt={item.productId?.name || "Unknown Product"}
-                    className="card-img-top"
-                    style={{ height: "300px", objectFit: "cover", padding: "13px", borderRadius: "10px" }}
+                    className="shopping-bag-image"
                     onError={(e) => (e.target.src = "/placeholder.jpg")}
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.productId?.name || "N/A"}</h5>
-                    <p className="card-text">₹{item.productId?.price?.toFixed(2) || "N/A"}</p>
-                    <div className="d-flex gap-2">
-                      <button
-                        onClick={() => removeFromBag(item.productId?._id)}
-                        className="btn btn-danger flex-fill"
-                        disabled={!item.productId}
-                      >
-                        Remove
-                      </button>
-                      <button
-                        onClick={() => handleBuyNow(item)}
-                        className="btn btn-success flex-fill"
-                        disabled={!item.productId}
-                      >
-                        Buy Now
-                      </button>
-                    </div>
-                  </div>
+                </div>
+                <div className="shopping-bag-details">
+                  <h5 className="shopping-bag-name">{item.productId?.name || "N/A"}</h5>
+                  <p className="shopping-bag-price">₹{item.productId?.price?.toFixed(2) || "N/A"}</p>
+                </div>
+                <div className="shopping-bag-actions">
+                  <button
+                    onClick={() => removeFromBag(item.productId?._id)}
+                    className="shopping-bag-button shopping-bag-button-remove"
+                    disabled={!item.productId}
+                  >
+                    Remove
+                  </button>
+                  <button
+                    onClick={() => handleBuyNow(item)}
+                    className="shopping-bag-button shopping-bag-button-checkout"
+                    disabled={!item.productId}
+                  >
+                    Buy Now
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
       <p><strong>Effective Date:</strong> March 23, 2025</p>
       <p><strong>Last Updated:</strong> March 23, 2025</p>
       <p>
-        Welcome to<strong>[Artify]</strong>. This Privacy Policy and Terms of Use outline the rules and policies governing the use of our e-commerce platform, including the rights and responsibilities of users and artists. By accessing or using this Platform, you agree to comply with these terms.
+        Welcome to<strong> Artify</strong>. This Privacy Policy and Terms of Use outline the rules and policies governing the use of our e-commerce platform, including the rights and responsibilities of users and artists. By accessing or using this Platform, you agree to comply with these terms.
       </p>
 
       <section>
