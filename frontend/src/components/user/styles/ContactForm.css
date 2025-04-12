@@ -1,0 +1,187 @@
+/* Page wrapper with artistic background */
+.contact-page-wrapper {
+    min-height: 100vh;
+    background: url('../../../assets/home/login-background-img.webp') no-repeat center/cover,
+  linear-gradient(135deg, rgba(255, 245, 230, 0.7), rgba(230, 245, 255, 0.7));
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Container styling */
+  .contact-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Animated header */
+  .animate-header {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    animation: slideInFromTop 0.8s ease-out;
+    font-family: 'Georgia', serif; /* Artistic font */
+  }
+  
+  /* Form container with hover animation */
+  .animate-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    padding: 25px;
+  }
+  
+  .animate-form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input and textarea animations */
+  .animate-input {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+  }
+  
+  .animate-input:focus {
+    border-color: #ff6f61; /* Artistic coral color */
+    box-shadow: 0 0 12px rgba(255, 111, 97, 0.4);
+    transform: scale(1.02);
+  }
+  
+  /* Button animations */
+  .animate-button {
+    background-color: #ff6f61;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .animate-button:hover {
+    background-color: #e65b50;
+    transform: scale(1.06);
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.5);
+  }
+  
+  .animate-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Success and error message animations */
+  .animate-success {
+    padding: 12px;
+    border-radius: 8px;
+    animation: fadeInUp 0.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    font-size: 1rem;
+  }
+  
+  /* Keyframe animations */
+  @keyframes slideInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) { /* Tablet */
+    .contact-form-container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .animate-header {
+      font-size: 2.2rem;
+    }
+  
+    .animate-form {
+      padding: 20px;
+    }
+  
+    .animate-button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) { /* Mobile */
+    .contact-form-container {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .animate-header {
+      font-size: 1.8rem;
+    }
+  
+    .animate-form {
+      padding: 15px;
+    }
+  
+    .animate-input {
+      font-size: 0.9rem;
+    }
+  
+    .animate-button {
+      font-size: 0.95rem;
+      padding: 8px;
+    }
+  
+    .animate-success {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
+  /* Additional polish */
+  .form-label {
+    font-weight: 500;
+    color: #34495e;
+    transition: color 0.3s ease;
+    font-family: 'Georgia', serif;
+  }
+  
+  .form-label:hover {
+    color: #ff6f61;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: none;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: none;
+  }
+  
+  /* Ensure form stays above background */
+  .contact-form-container, .animate-form {
+    position: relative;
+    z-index: 2;
+  }
